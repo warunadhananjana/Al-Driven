@@ -71,33 +71,33 @@ const Marketing = () => {
       </div>
 
       {/* Brand Logos */}
-      <div className="fixed bottom-4 left-4 right-4 md:absolute md:bottom-[-45px] md:left-8 md:right-8">
-        <div className="max-w-6xl mx-auto bg-[#14171F] rounded-2xl px-4 md:px-8 py-6 md:py-8">
-          <div className="grid grid-cols-3 md:flex md:flex-nowrap justify-between items-center gap-3.5 md:gap-10">
+      <div className="absolute bottom-[-85px] left-4 right-4 md:bottom-[-45px] md:left-8 md:right-8 z-50">
+        <div className="max-w-6xl mx-auto bg-[#14171F] rounded-2xl px-4 md:px-8 py-4 md:py-9">
+          <div className="grid grid-cols-3 md:flex md:flex-nowrap justify-between items-center gap-2 md:gap-10">
             <img
               src="/sony.svg"
               alt="Sony"
-              className="w-auto h-2.5 md:h-4 brightness-0 invert mx-auto"
+              className="w-auto h-2 md:h-4 brightness-0 invert mx-auto"
             />
             <img
               src="/spotify.svg"
               alt="Spotify"
-              className="w-auto h-2.5 md:h-4 brightness-0 invert mx-auto"
+              className="w-auto h-2 md:h-4 brightness-0 invert mx-auto"
             />
             <img
               src="/canon.svg"
               alt="Canon"
-              className="w-auto h-2.5 md:h-4 brightness-0 invert mx-auto"
+              className="w-auto h-2 md:h-4 brightness-0 invert mx-auto"
             />
             <img
               src="/walmart.svg"
               alt="Walmart"
-              className="w-auto h-2.5 md:h-4 brightness-0 invert mx-auto hidden md:block"
+              className="w-auto h-2 md:h-4 brightness-0 invert mx-auto hidden md:block"
             />
             <img
               src="/spotify.svg"
               alt="Spotify"
-              className="w-auto h-2.5 md:h-4 brightness-0 invert mx-auto hidden md:block"
+              className="w-auto h-2 md:h-4 brightness-0 invert mx-auto hidden md:block"
             />
           </div>
         </div>
