@@ -1,10 +1,21 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavClick = (path, id) => {
+    navigate(path);
+    setIsMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <nav className="relative px-4 md:px-8 py-4">
+    <nav className="relative px-4 md:px-8 py-4 fixed top-0 w-full bg-white z-50">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
@@ -14,21 +25,30 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4 lg:gap-8">
-          <a href="#" className="text-purple-600 border-b-2 border-purple-600">
+          <button
+            onClick={() => handleNavClick("/", "home")}
+            className="text-purple-600 border-b-2 border-purple-600"
+          >
             Home
-          </a>
-          <a href="#" className="text-gray-600 hover:text-purple-600">
+          </button>
+          <button
+            onClick={() => handleNavClick("/features", "features")}
+            className="text-gray-600 hover:text-purple-600"
+          >
             Feature
-          </a>
-          <a href="#" className="text-gray-600 hover:text-purple-600">
+          </button>
+          <button
+            onClick={() => handleNavClick("/testimonials", "testimonials")}
+            className="text-gray-600 hover:text-purple-600"
+          >
             Testimonials
-          </a>
-          <a href="#" className="text-gray-600 hover:text-purple-600">
+          </button>
+          <button
+            onClick={() => handleNavClick("/pricing", "pricing")}
+            className="text-gray-600 hover:text-purple-600"
+          >
             Pricing
-          </a>
-          <a href="#" className="text-gray-600 hover:text-purple-600">
-            Download
-          </a>
+          </button>
         </div>
 
         {/* Desktop CTA Button */}
@@ -70,24 +90,30 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-white shadow-lg md:hidden">
           <div className="flex flex-col py-4">
-            <a
-              href="#"
-              className="px-4 py-2 text-purple-600 hover:bg-purple-50"
+            <button
+              onClick={() => handleNavClick("/", "home")}
+              className="px-4 py-2 text-purple-600 hover:bg-purple-50 text-left"
             >
               Home
-            </a>
-            <a href="#" className="px-4 py-2 text-gray-600 hover:bg-purple-50">
+            </button>
+            <button
+              onClick={() => handleNavClick("/features", "features")}
+              className="px-4 py-2 text-gray-600 hover:bg-purple-50 text-left"
+            >
               Feature
-            </a>
-            <a href="#" className="px-4 py-2 text-gray-600 hover:bg-purple-50">
+            </button>
+            <button
+              onClick={() => handleNavClick("/testimonials", "testimonials")}
+              className="px-4 py-2 text-gray-600 hover:bg-purple-50 text-left"
+            >
               Testimonials
-            </a>
-            <a href="#" className="px-4 py-2 text-gray-600 hover:bg-purple-50">
+            </button>
+            <button
+              onClick={() => handleNavClick("/pricing", "pricing")}
+              className="px-4 py-2 text-gray-600 hover:bg-purple-50 text-left"
+            >
               Pricing
-            </a>
-            <a href="#" className="px-4 py-2 text-gray-600 hover:bg-purple-50">
-              Download
-            </a>
+            </button>
             <div className="px-4 pt-4">
               <button className="w-full px-4 py-2 text-purple-600 border border-purple-200 rounded-full bg-white hover:bg-purple-50">
                 Start Free Trial
