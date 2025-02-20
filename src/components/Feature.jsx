@@ -2,9 +2,9 @@ import React from "react";
 
 const Feature = () => {
   return (
-    <div className="w-full px-4 py-14 pb-24 mt-24 bg-white">
+    <div id="feature" className="page-container">
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full px-4 py-12 mt-32 md:mt-48 bg-white">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
